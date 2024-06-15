@@ -13,10 +13,10 @@ import adbCommands from './adb/adbCommands'
 import adbSavelogs from './adb/adbSavelogs'
 import webSocketServer from './webSocketServer'
 
-
+let mainWindow
 function createWindow() {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+   mainWindow = new BrowserWindow({
     width: 900,
     height: 670,
     show: false,
@@ -48,6 +48,41 @@ function createWindow() {
   }
 }
 
+function createChildWindow() {
+  // Create the browser window.
+  let childWindow = new BrowserWindow({
+    width: 700,
+    height: 570,
+    show: false,
+    autoHideMenuBar: true,
+    // parent:mainWindow,
+    // ...(process.platform === 'linux' ? { icon } : {}),
+    icon: join(__dirname,'../../resources/icon.png'),
+    webPreferences: {
+      preload: join(__dirname, '../preload/index.js'),
+      sandbox: false
+    }
+  })
+
+  childWindow.on('ready-to-show', () => {
+    childWindow.show()
+  })
+
+  childWindow.webContents.setWindowOpenHandler((details) => {
+    shell.openExternal(details.url)
+    return { action: 'deny' }
+  })
+
+  // HMR for renderer base on electron-vite cli.
+  // Load the remote URL for development or the local html file for production.
+  if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
+    // childWindow.loadFile(join(__dirname, '../renderer/childIndex.html'))
+    childWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
+  } else {
+    childWindow.loadFile(join(__dirname, '../renderer/childIndex.html'))
+  }
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
@@ -69,6 +104,10 @@ app.whenReady().then(() => {
   adbCommands()
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
+
+  ipcMain.on("openChildWindow" , () => {
+    createChildWindow()
+  })
 
   ipcMain.handle('adb', async (event, a) => {
     a = 'im here in react '
@@ -165,6 +204,19 @@ app.whenReady().then(() => {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  })
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createChildWindow()
+    }
+  })
+
+  // createChildWindow()
+
+  app.on('activate', function () {
+    // On macOS it's common to re-create a window in the app when the
+    // dock icon is clicked and there are no other windows open.
+    if (BrowserWindow.getAllWindows().length === 0) createChildWindow()
   })
 })
 

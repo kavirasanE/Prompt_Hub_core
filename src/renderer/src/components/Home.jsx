@@ -40,6 +40,12 @@ export default function Home() {
     }
     console.log(copyText)
   }
+  
+  const handleOpenChildWindow = async () => {
+   await  window.electron.ipcRenderer
+    .send("openChildWindow")
+  }
+
 
   return (
     <div className="pt- bg-white">
@@ -50,7 +56,9 @@ export default function Home() {
         </Link>
       </div>
        {/* <ErrorBoundaries/> */}
-   
+       <div>
+        <Button onClick={handleOpenChildWindow}>Open New Window</Button>
+       </div>
       <div className='bg-yellow-100'>
       <Marquee>
         <p className='my-5 p-1 rounded-lg font-bold text-lg  '>"This page is experimental, and we are working on it. It will be in production soon! Have a good day!".</p>
