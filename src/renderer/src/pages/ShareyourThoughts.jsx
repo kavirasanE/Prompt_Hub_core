@@ -33,7 +33,7 @@ const ShareyourThoughts = () => {
               focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600
                dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
               >
-                give your feedback
+                Give your feedback
                 <HiArrowRight className="ml-2 h-4 w-4" />
               </a>
               <p> (or)</p>

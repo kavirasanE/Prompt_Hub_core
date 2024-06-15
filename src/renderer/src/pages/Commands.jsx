@@ -136,19 +136,17 @@ const Commands = () => {
       title: 'Hypnos Galileo Commands',
       commands: [
         {
-          command: 'exampleHypnosGalileoCommand',
-          description: 'This is an example command for Hypnos and Galileo operations.'
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: 'Hypnos Galileo Commands',
-      commands: [
+          command: 'cat /etc/os-release',
+          description: 'To check full details.'
+        },
         {
-          command: 'exampleHypnosGalileoCommand',
-          description: 'This is an example command for Hypnos and Galileo operations.'
-        }
+          command: `cat /etc/os-release | grep BUILD_DESC | sed -n "s/^.*\\/\\([0-9]*\\).*/\\1/p"`,
+          description: 'To check build details'
+      },
+      {
+          command: `cat /etc/os-release | grep VERSION_NUMBER | sed -n "s/^.*=.\\([0-9]*\\).*/\\1/p"`,
+          description: 'To check version Number'
+      }
       ]
     },
     {
@@ -182,7 +180,7 @@ const Commands = () => {
       ]
     }
   ]
-  
+
 
   const { commandsLoading, setCommandsLoading } = useContext(DataContext)
   const tabsRef = useRef(null)
@@ -231,7 +229,8 @@ const Commands = () => {
       {commandsLoading && 
       <div className=' bg-white/20 h-full w-full absolute z-10 flex justify-center items-center text-white'> 
       <Lottie options={defaultOptions} height={400} width={500} />
-      </div>}
+      </div>
+      }
       <Online />
       <div className="bg-white text-black">
         <div className="mx-3">

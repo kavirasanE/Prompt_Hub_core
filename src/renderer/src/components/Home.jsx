@@ -6,6 +6,7 @@ import copy from 'copy-to-clipboard'
 import toast from 'react-hot-toast'
 import Footer from './Footer'
 import Marquee from 'react-fast-marquee'
+// import ErrorBoundaries from "./ErrorBoundary"
 
 export default function Home() {
   const [command, setCommand] = useState('')
@@ -48,7 +49,8 @@ export default function Home() {
           Back to Home
         </Link>
       </div>
-
+       {/* <ErrorBoundaries/> */}
+   
       <div className='bg-yellow-100'>
       <Marquee>
         <p className='my-5 p-1 rounded-lg font-bold text-lg  '>"This page is experimental, and we are working on it. It will be in production soon! Have a good day!".</p>

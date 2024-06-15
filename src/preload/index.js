@@ -14,14 +14,15 @@ const socket = {
 }
 const deviceConnect = {
   message: 'getprop | grep build',
-  // message2: 'cat /etc/os-release',
+  message1:'cat /etc/os-release',
   // message: {fos:'getprop | grep build' , vega:'cat /etc/os-release'},
-  device: function (callback) {
-    adbCommands(this.message,callback)
-  },
   connectedDevice: function (callback) {
     trackDevice(callback)
+  },
+  device: function (callback) {
+    adbCommands(this.message,callback)
   }
+  
 }
 
 const listDevice = {

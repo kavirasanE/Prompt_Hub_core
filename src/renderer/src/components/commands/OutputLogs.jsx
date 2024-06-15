@@ -10,7 +10,7 @@ const OutputLogs = ({ output }) => {
   const { commandstoOuput, setPauseRunningCommand, pauseRunningCommand } = useContext(DataContext)
   const textRef = useRef('')
   const [copytext, setCopyText] = useState(true)
-
+  
   const CopytoClipboard = () => {
     let copyText = textRef.current?.innerText
     console.log(copyText)
