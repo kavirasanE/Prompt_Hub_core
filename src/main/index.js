@@ -189,6 +189,7 @@ app.whenReady().then(() => {
 
 
   ipcMain.handle('runninglog', (event, fileLocation) => {
+    
     adbSavelogs(fileLocation)
   })
 

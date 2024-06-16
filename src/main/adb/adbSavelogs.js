@@ -1,4 +1,3 @@
-
 const Promise = require('bluebird')
 const WebSocket = require('ws')
 const adb = require('adbkit')
@@ -7,68 +6,63 @@ const wss = new WebSocket.Server({ port: 3000 })
 const fs = require('fs')
 const path = require('path')
 
-const writeLogtoFile = (fileLocation, log) => {
-  fs.appendFile(fileLocation, log + '\n', (err) => {
+// let deviceLogs = {}
+
+const writeLogtoFile = (fileLocation, deviceId, log) => {
+  let date = new Date()
+  const datePart = date.toISOString().split('T')[0].replace(/-/g, '_')
+  const fileName = `${deviceId}_${datePart}.txt`
+  const filePath = path.join(fileLocation, fileName)
+  fs.appendFile(filePath, log + '\n', (err) => {
     if (err) {
-      console.log('error in writing file', err)
+      console.log('error in writing file see adb sav logs,js', err)
     }
   })
 }
 
-let fileName = ''
-
-// Function to handle ADB logs
 const adbSavelogs = (filelocation) => {
-  // console.log(filelocation, 'from adbSavelogs')
   wss.on('connection', (ws) => {
-    // console.log('Client connected to WebSocket server')
-    handleLogs(filelocation, (result) => {
-      // console.log(result)
+    handleLogs(filelocation, (deviceId, result) => {
+      // console.log(deviceId)
       if (result) {
-        let date = new Date()
-        const datePart = date.toISOString().split('T')[0].replace(/-/g, '_')
-        fileName += '_' + datePart
-        const fileLocation = path.join(filelocation, fileName + '.txt')
-        // console.log(fileLocation)
-        writeLogtoFile(fileLocation, result)
-        ws.send(JSON.stringify(result))
+        // addLogEntry(deviceId, result)
+        writeLogtoFile(filelocation, deviceId, result)
+        ws.send(JSON.stringify( {deviceId, result }))
       }
     })
-
     ws.on('close', () => {
-      // console.log('Client disconnected from WebSocket server')
+      console.log('Client disconnected from WebSocket server')
     })
   })
 }
 
-const handleLogs = (filelocation, callback) => {
+const handleLogs = (fileLocation, callback) => {
   const command = { FOS: 'logcat -v threadtime', vega: 'journalctl -f' }
   const out = command.vega
 
   client
     .listDevices()
     .then((devices) => {
+      console.log(devices)
       return Promise.map(devices, (device) => {
+        // console.log(devices,"inside promises")
         return client.shell(device.id, out).then((stream) => {
           stream.on('data', (data) => {
             const result = data.toString().trim()
             if (result.includes('journalctl: not found')) {
               client.shell(device.id, command.FOS).then((fosStream) => {
                 fosStream.on('data', (data) => {
-                  fileName = device.id
                   const fosResult = data.toString().trim()
-                  callback(fosResult)
+                  callback(device.id, fosResult)
                 })
               })
             } else {
-              callback(result)
+              callback(device.id, result)
             }
           })
-
           stream.on('error', (err) => {
             console.error('Stream error:', err)
           })
-
           stream.on('end', () => {
             console.log('Stream ended')
           })
@@ -82,5 +76,6 @@ const handleLogs = (filelocation, callback) => {
       console.error('Something went wrong:', err.stack)
     })
 }
+
 
 export default adbSavelogs

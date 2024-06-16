@@ -5,7 +5,6 @@ import { Navigate } from 'react-router-dom'
 
 const ErrorBoundaries = () => {
   const [openModal, setOpenModal] = useState(true)
-
   const [redirect, setRedirect] = useState(false)
 
   const handlerefresh = () => {
@@ -13,13 +12,9 @@ const ErrorBoundaries = () => {
     setRedirect(true)
   }
 
-  if (redirect) {
-    return <Navigate to="/" />
-  }
-
   return (
     <>
-      {/* <Button onClick={() => setOpenModal(true)}>Toggle modal</Button> */}
+    
       <Modal show={openModal} size="md" onClose={() => setOpenModal(false)} popup>
         <Modal.Header />
         <Modal.Body>
@@ -39,6 +34,7 @@ const ErrorBoundaries = () => {
                 Please Refresh your Page
               </Button>
             </div>
+            {redirect && <Navigate to="/Home"/>}
           </div>
         </Modal.Body>
       </Modal>
