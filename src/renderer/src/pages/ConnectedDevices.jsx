@@ -14,24 +14,21 @@ const ConnectedDevices = () => {
   const [devices, setDevices] = useState([])
   const [data, setData] = useState([])
 
-  const getBuildDetails = async (callback) => {
+  const getBuildDetails = async () => {
     await window.deviceConnect.device((datas, output) => {
       if (datas) {
-        console.log(typeof datas)
-      } else {
         try {
-          console.log(output, 'output from frontend')
+          let DSN = datas
           const outputString = output
           let obj = outputString.split('\n')
           let deviceName = ''
           let buildNumber = ''
           let buildNo = ''
-          obj.map((d, index) => {
+          obj.forEach((d) => {
             if (d.includes('ro.build.lab126.project')) {
               deviceName += d
               deviceName = deviceName.split('\n')
               deviceName = deviceName[0]
-              // console.log(o[0])
             } else if (d.includes('ro.build.version.name')) {
               buildNumber += d
               buildNumber = buildNumber.split('\n')
@@ -49,76 +46,28 @@ const ConnectedDevices = () => {
             }
           })
           const buildDetails = {
+            DSN: DSN,
             deviceName: deviceName,
             build: buildNumber,
             version: buildNo
           }
-          if (callback) callback(buildDetails)
+          console.log(buildDetails)
+          setListDevices((prevListDevices) => {
+            const uniqueDevices = prevListDevices.filter((device) => device.DSN !== DSN)
+            return [...uniqueDevices, buildDetails]
+          })
         } catch (err) {
-          console.log(output)
-          const vega = getVegaDetails(output)
-          if (vega) {
-            if (callback) callback(vega)
-          }
-          console.log(err, 'error from the frontend vega device ')
+          console.log(err)
         }
       }
     })
   }
 
-  // const getVegaDetails = (output) => {
-  //   console.log(output, 'from get Vega Details')
-  //   let convertTostring = output.split('\n')
-  //   let deviceName = 'Hypnos/Galileo'
-  //   let buildNumber = ''
-  //   let buildNo = ''
-  //   convertTostring.map((data, index) => {
-  //     if (data.includes('BUILD_DESC')) {
-  //       buildNumber += data
-  //       console.log(buildNumber, 'build details')
-  //     } else if (data.includes('BUILD_VARIANT')) {
-  //       buildNo += data
-  //       console.log(buildNo, 'vega detail')
-  //     }
-  //   })
-  //   const buildDetails = {
-  //     deviceName: deviceName,
-  //     build: buildNumber,
-  //     version: buildNo
-  //   }
-  //   console.log(buildDetails)
-  //   return buildDetails
-  // }
-
-  const trackDevice = () => {
-    window.deviceConnect.connectedDevice((data, output) => {
-      if (data) {
-        setListDevices((prevDevices) => {
-          // if (data.status === 'plug') {
-          // let know =data.id
-          if (data.status === 'plug') {
-            console.log(data, 'from frontend')
-            getBuildDetails((buildDetails) => {
-              if (buildDetails) {
-                const UpdatedData = { ...data, ...buildDetails }
-                if (!prevDevices.some((device) => device.id === data.id)) {
-                  setListDevices([...prevDevices, UpdatedData])
-                }
-              }
-            })
-          } else if (data.status === 'unplug') {
-            return prevDevices.filter((device) => device.id !== data.id)
-          }
-          return prevDevices
-        })
-      } else {
-        // console.log(output)
-      }
-    })
-  }
-
   useEffect(() => {
-    trackDevice()
+    getBuildDetails()
+    // return() => {
+    //    getBuildDetails();
+    // }
   }, [])
 
   const defaultOptions = {
@@ -130,8 +79,9 @@ const ConnectedDevices = () => {
     }
   }
 
-  const handleRefresh = () => {
-    trackDevice()
+  const handleRefresh =  () => {
+    setListDevices([]);
+     getBuildDetails()
   }
 
   return (
@@ -173,7 +123,7 @@ const ConnectedDevices = () => {
           </div>
         )}
       </div>
-      <div className="absolute bottom-0 w-full">
+      <div className=" ">
         <Footer />
       </div>
     </div>
@@ -181,3 +131,39 @@ const ConnectedDevices = () => {
 }
 
 export default ConnectedDevices
+
+// const trackDevice =  () => {
+//   window.deviceConnect.connectedDevice(async (data, output) => {
+//     console.log(data,"await")
+//     if (data) {
+//       if (data.status === 'plug') {
+//         try {
+//           const buildDetails = await getBuildDetails();
+//           // console.log(buildDetails)
+//           if (buildDetails) {
+//             const UpdatedData = { ...data, ...buildDetails};
+//             await delay(200);
+//             console.log(UpdatedData)
+//             setListDevices((prevDevices) => {
+//               const deviceExists = prevDevices.some((device) => device.id === data.id);
+//               if (deviceExists) {
+//                return prevDevices.map((device) => (device.id === data.id ? UpdatedData : device))
+//               }
+//                else {
+//                 return [...prevDevices, UpdatedData]
+//               }
+//             })
+//           }
+//         } catch (err) {
+//           console.log('error occured')
+//         }
+//       } else if (data.status === 'unplug') {
+//         setListDevices((prevDevices) =>
+//           prevDevices.filter((device) => device.id !== data.id))
+
+//       }
+//     } else {
+//       console.log('no device Found')
+//     }
+//   });
+// }

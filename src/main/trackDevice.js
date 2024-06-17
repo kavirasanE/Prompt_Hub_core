@@ -9,7 +9,9 @@ function trackDevice(callback) {
         device.status ='plug'
         console.log('Device  was plugged in', device)
         console.log(device)
-        if (callback) callback(device)
+       
+          if (callback) callback(device)
+        
       })
       tracker.on('remove', function (device) {
         device.status ='unplug',

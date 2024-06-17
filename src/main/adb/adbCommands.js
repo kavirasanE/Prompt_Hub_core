@@ -23,7 +23,7 @@ function adbCommands(message, callback) {
                 result != '/bin/bash: getprop: command not found'
               ) {
                 // console.log(result, 'from adb commands backend')
-                if (callback) callback(null, result)
+                if (callback) callback(device.id, result)
               } else {
                 adbCommands(m, callback)
               }

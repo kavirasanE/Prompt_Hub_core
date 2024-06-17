@@ -14,15 +14,14 @@ const socket = {
 }
 const deviceConnect = {
   message: 'getprop | grep build',
-  message1:'cat /etc/os-release',
+  message1: 'cat /etc/os-release',
   // message: {fos:'getprop | grep build' , vega:'cat /etc/os-release'},
   connectedDevice: function (callback) {
     trackDevice(callback)
   },
   device: function (callback) {
-    adbCommands(this.message,callback)
+    adbCommands(this.message, callback)
   }
-  
 }
 
 const listDevice = {
@@ -37,8 +36,8 @@ const listDevice = {
 
 if (process.contextIsolated) {
   try {
-    contextBridge.exposeInMainWorld('electron', electronAPI)
-    contextBridge.exposeInMainWorld('api', api),
+      contextBridge.exposeInMainWorld('electron', electronAPI)
+      contextBridge.exposeInMainWorld('api', api),
       contextBridge.exposeInMainWorld('socket', socket),
       contextBridge.exposeInMainWorld('deviceConnect', deviceConnect),
       contextBridge.exposeInMainWorld('listDevice', listDevice)
@@ -46,7 +45,7 @@ if (process.contextIsolated) {
     console.error(error)
   }
 } else {
-  ;(window.electron = electronAPI),
+   (window.electron = electronAPI),
     (window.api = api),
     (window.socket = socket),
     (window.deviceConnect = deviceConnect),

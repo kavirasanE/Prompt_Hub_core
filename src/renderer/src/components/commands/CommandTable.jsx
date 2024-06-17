@@ -7,6 +7,7 @@ import { DataContext } from '../context/DataProvider'
 const CommandTable = ({ item, index, callback }) => {
   const { setCommandstoOutput, pauseRunningCommand, listDevices,commandsLoading,setCommandsLoading } = useContext(DataContext)
   // console.log(pauseRunningCommand)
+  
   const handleClick = (e) => {
     setCommandsLoading(true)
     setTimeout(()=> {
