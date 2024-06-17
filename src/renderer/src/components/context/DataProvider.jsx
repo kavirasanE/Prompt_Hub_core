@@ -5,8 +5,9 @@ export const DataContext = createContext({})
 const DataProvider = ({ children }) => {
   const [commandstoOuput, setCommandstoOutput] = useState()
   const [pauseRunningCommand, setPauseRunningCommand] = useState(true)
-  const [listDevices,setListDevices] =useState([]);
-  const [commandsLoading,setCommandsLoading] =useState(false)
+  const [listDevices, setListDevices] = useState([])
+  const [commandsLoading, setCommandsLoading] = useState(false)
+  const [currentDSN, setCurrentDSN] = useState('')
   return (
     <DataContext.Provider
       value={{
@@ -17,7 +18,9 @@ const DataProvider = ({ children }) => {
         listDevices,
         setListDevices,
         commandsLoading,
-        setCommandsLoading
+        setCommandsLoading,
+        currentDSN,
+        setCurrentDSN
       }}
     >
       {children}

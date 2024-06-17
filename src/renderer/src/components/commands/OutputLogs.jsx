@@ -7,10 +7,11 @@ import copy from 'copy-to-clipboard'
 import toast from 'react-hot-toast'
 
 const OutputLogs = ({ output }) => {
-  const { commandstoOuput, setPauseRunningCommand, pauseRunningCommand } = useContext(DataContext)
+  const { commandstoOuput, setPauseRunningCommand, pauseRunningCommand, currentDSN } =
+    useContext(DataContext)
   const textRef = useRef('')
   const [copytext, setCopyText] = useState(true)
-  
+
   const CopytoClipboard = () => {
     let copyText = textRef.current?.innerText
     console.log(copyText)
@@ -29,15 +30,14 @@ const OutputLogs = ({ output }) => {
   return (
     <div className="text-white">
       <p className="bg-white/20 p-2  font-medium subpixel-antialiased flex justify-between items-center">
-      
         <button
           onClick={() => setPauseRunningCommand(!pauseRunningCommand)}
-          className="text-yellow-200  rounded-sm text-xl p-1 "
+          className="  rounded-sm  "
         >
+          Device DSN: {currentDSN}
           {/* {pauseRunningCommand ? <MdOutlinePauseCircleOutline /> : <GrResume />} */}
         </button>
         <button className="flex items-center gap-1 px-4 text-sm font-normal" onClick={handleCopy}>
-         
           {copytext ? (
             <span className="flex items-center gap-1">
               <MdContentCopy /> Copy Command
@@ -47,10 +47,10 @@ const OutputLogs = ({ output }) => {
           )}
         </button>
       </p>
-      <pre className="text-yellow-200 truncate p-2" >
-        Command : {commandstoOuput}
+      <pre className="text-yellow-200 truncate p-2">Command : {commandstoOuput}</pre>
+      <pre className="p-5 break-all text-wrap" ref={textRef}>
+        {output}{' '}
       </pre>
-      <pre className="p-5 break-all text-wrap" ref={textRef}>{output} </pre>
     </div>
   )
 }

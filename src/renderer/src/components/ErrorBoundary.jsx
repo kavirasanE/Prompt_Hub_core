@@ -2,6 +2,7 @@ import { Button, Modal } from 'flowbite-react'
 import { useState } from 'react'
 import { HiOutlineExclamationCircle } from 'react-icons/hi'
 import { Navigate } from 'react-router-dom'
+import comedy from "../assets/err.gif"
 
 const ErrorBoundaries = () => {
   const [openModal, setOpenModal] = useState(true)
@@ -14,7 +15,6 @@ const ErrorBoundaries = () => {
 
   return (
     <>
-    
       <Modal show={openModal} size="md" onClose={() => setOpenModal(false)} popup>
         <Modal.Header />
         <Modal.Body>
@@ -25,14 +25,12 @@ const ErrorBoundaries = () => {
               🐞🔍 Please report it to me for a quick workaround. We'll have it fixed in the next
               version. Ping me on Chime at <span className='font-semibold text-xl text-blue-700 underline '> kavirasa</span> or email me at
               <span className='font-semibold text-xl text-blue-700 underline '> kavirasa@amazon.com</span>. You can also give feedback on my share your thoughts page. If you
-              want to continue with the application, just click the refresh button and keep on
+              want to continue with the application, kindly Restart your application and keep on
               rockin'! 🎸 Thank you for your patience and sorry for the inconvenience. Have a
               fantastic day! 🌟
             </h3>
             <div className="flex justify-center gap-4">
-              <Button className="bg-purple-800" onClick={handlerefresh}>
-                Please Refresh your Page
-              </Button>
+            <img src={comedy}/>
             </div>
             {redirect && <Navigate to="/Home"/>}
           </div>

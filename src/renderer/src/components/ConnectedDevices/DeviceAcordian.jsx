@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Accordion, Button } from 'flowbite-react'
 import { Link } from 'react-router-dom'
+import { DataContext } from '../context/DataProvider'
 const DeviceAcordian = ({ device, index }) => {
+  const {setCurrentDSN} =useContext(DataContext);
   // console.log(device, 'output from accordian')
   return (
     <div className="p-5">
@@ -27,7 +29,7 @@ const DeviceAcordian = ({ device, index }) => {
                   </Link>
 
                   <Link to="/commands">
-                    <Button color="dark">Check Commands</Button>
+                    <Button color="dark" onClick={() => setCurrentDSN(device.DSN)}>Check Commands</Button>
                   </Link>
                 </div>
                 <p>{device.version}</p>

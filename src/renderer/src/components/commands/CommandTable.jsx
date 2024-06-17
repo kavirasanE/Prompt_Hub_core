@@ -5,9 +5,9 @@ import { decode } from 'messagepack'
 import { DataContext } from '../context/DataProvider'
 
 const CommandTable = ({ item, index, callback }) => {
-  const { setCommandstoOutput, pauseRunningCommand, listDevices,commandsLoading,setCommandsLoading } = useContext(DataContext)
+  const { setCommandstoOutput, pauseRunningCommand, listDevices,commandsLoading,setCommandsLoading,currentDSN } = useContext(DataContext)
   // console.log(pauseRunningCommand)
-  
+  console.log("handled roperly",currentDSN);
   const handleClick = (e) => {
     setCommandsLoading(true)
     setTimeout(()=> {
@@ -17,7 +17,7 @@ const CommandTable = ({ item, index, callback }) => {
     const coms = item.command
     e.preventDefault()
     e.stopPropagation()
-    let device = listDevices[0].id
+    let device = currentDSN
     // console.log(device)
     const shellComand = coms
     // console.log(shellComand)
