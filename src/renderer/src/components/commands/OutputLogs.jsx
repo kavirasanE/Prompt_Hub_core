@@ -11,6 +11,9 @@ const OutputLogs = ({ output }) => {
     useContext(DataContext)
   const textRef = useRef('')
   const [copytext, setCopyText] = useState(true)
+   if(typeof output == "object") {
+        output = " "
+   }
 
   const CopytoClipboard = () => {
     let copyText = textRef.current?.innerText

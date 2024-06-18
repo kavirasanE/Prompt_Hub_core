@@ -16,7 +16,7 @@ import { HiCommandLine } from 'react-icons/hi2'
 import { PiPlugsConnectedDuotone } from 'react-icons/pi'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { Link } from 'react-router-dom'
-import quip from "../assets/quip.png"
+import quip from '../assets/quip.png'
 export function Online() {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -33,8 +33,11 @@ export function Online() {
         <p className="rounded-md font-bold text-xl  p-2 text-black">
           Prompt <span className="bg-black p-0.5 rounded-sm px-2 text-white">hub</span>
         </p>
-        <a href='https://quip-amazon.com/3CxOAyamZbJl/Untitled#temp:C:eET1d0643d10858404087b11218a' target='_blank'>
-          <img src={quip} className='w-20 h-10 object-contain cursor-pointer' />
+        <a
+          href="https://quip-amazon.com/3CxOAyamZbJl/Untitled#temp:C:eET1d0643d10858404087b11218a"
+          target="_blank"
+        >
+          <img src={quip} className="w-20 h-10 object-contain cursor-pointer" />
         </a>
       </div>
       <Drawer open={isOpen} onClose={handleClose}>
@@ -66,18 +69,26 @@ export function Online() {
                     <Sidebar.Item icon={HiCommandLine}>Log Commands</Sidebar.Item>
                   </Link>
                   <Link to="/contibutors">
-                    <Sidebar.Item icon={HiOutlineUserGroup}>
-                    About Prompt Hub
-                    </Sidebar.Item>
+                    <Sidebar.Item icon={HiOutlineUserGroup}>About Prompt Hub</Sidebar.Item>
                   </Link>
-                  
                   <Link to="/thoughts">
-                  <Sidebar.Item
-                    icon={HiInformationCircle}
-                  >
-                    Share your Thoughts
-                  </Sidebar.Item>
+                    <Sidebar.Item icon={HiInformationCircle}>Share your Thoughts</Sidebar.Item>
                   </Link>
+                  <Sidebar.ItemGroup>
+                  <Sidebar.Item href="#" label="Beta" labelColor="dark">
+                  IDMS Tracker
+                  </Sidebar.Item>
+                  <Sidebar.Item href="#" label="AI" labelColor="dark">
+                   Bug Report AI
+                  </Sidebar.Item>
+                  <Sidebar.Item href="#"  label="Beta" labelColor="dark">
+                   Missing Label
+                  </Sidebar.Item>
+                  <Sidebar.Item href="#"  label="Beta" labelColor="dark">
+                    URL Hub
+                  </Sidebar.Item>
+                 
+                  </Sidebar.ItemGroup>
                 </Sidebar.ItemGroup>
               </Sidebar.Items>
             </div>
