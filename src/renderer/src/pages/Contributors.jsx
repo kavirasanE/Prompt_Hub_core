@@ -1,29 +1,30 @@
 import React, { useState } from 'react'
 import { Online } from '../components/Sidebar'
 import ProfileCard from '../components/contributors/ProfileCard'
-import Marquee from 'react-fast-marquee'
-import goodwin from '../assets/teamphoto/goodwin.jpg'
-import sathish from '../assets/teamphoto/sathish.jpg'
-import sowbar from '../assets/teamphoto/sowbar.jpg'
-import suriyakala from '../assets/teamphoto/suriyakala.jpg'
-import benisha from '../assets/teamphoto/benisha.jpg'
-import saravana from '../assets/teamphoto/saravana.jpg'
-import priya from '../assets/teamphoto/priya.jpg'
-import dayalu from '../assets/teamphoto/dayalu.jpg'
-import monica from '../assets/teamphoto/monica.jpg'
-import subaash from '../assets/teamphoto/subaash.jpg'
-import sriram from '../assets/teamphoto/sriram.jpg'
-import niranjan from '../assets/teamphoto/niranjan.jpg'
+
+// import goodwin from '../assets/teamphoto/goodwin.jpg'
+// import sathish from '../assets/teamphoto/sathish.jpg'
+// import sowbar from '../assets/teamphoto/sowbar.jpg'
+// import suriyakala from '../assets/teamphoto/suriyakala.jpg'
+// import benisha from '../assets/teamphoto/benisha.jpg'
+// import saravana from '../assets/teamphoto/saravana.jpg'
+// import priya from '../assets/teamphoto/priya.jpg'
+// import dayalu from '../assets/teamphoto/dayalu.jpg'
+// import monica from '../assets/teamphoto/monica.jpg'
+// import subaash from '../assets/teamphoto/subaash.jpg'
+// import sriram from '../assets/teamphoto/sriram.jpg'
+// import niranjan from '../assets/teamphoto/niranjan.jpg'
 import kavirasa from '../assets/teamphoto/kavirasa.jpg'
-import praveen from '../assets/teamphoto/praveen.jpg'
-import joseph from '../assets/teamphoto/joseph.jpg'
-import asha from '../assets/teamphoto/asha.jpg'
-import john from '../assets/teamphoto/john.jpg'
-import aaminah from '../assets/teamphoto/aaminah.jpg'
-import vignesh from '../assets/teamphoto/vignesh.jpg'
+// import praveen from '../assets/teamphoto/praveen.jpg'
+// import joseph from '../assets/teamphoto/joseph.jpg'
+// import asha from '../assets/teamphoto/asha.jpg'
+// import john from '../assets/teamphoto/john.jpg'
+// import aaminah from '../assets/teamphoto/aaminah.jpg'
+// import vignesh from '../assets/teamphoto/vignesh.jpg'
 import Footer from '../components/Footer'
 
 const Contributors = () => {
+
   const developer = [
     {
       name: 'KAVIRASAN E',
@@ -32,6 +33,7 @@ const Contributors = () => {
       years: 2
     }
   ]
+
   const Seniorwhateam = [
     {
       name: 'Satheesh G',
@@ -136,6 +138,7 @@ const Contributors = () => {
       years: 5
     }
   ]
+  
   const Managers = [
     {
       name: 'Aaminah Khursheed N',

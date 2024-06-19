@@ -33,13 +33,14 @@ const OutputLogs = ({ output }) => {
   return (
     <div className="text-white">
       <p className="bg-white/20 p-2  font-medium subpixel-antialiased flex justify-between items-center">
-        <button
-          onClick={() => setPauseRunningCommand(!pauseRunningCommand)}
+        {/* <button
+          // onClick={() => setPauseRunningCommand(!pauseRunningCommand)}
+          
           className="  rounded-sm  "
-        >
-          Device DSN: {currentDSN}
+        > */}
+         <p>Device DSN: {currentDSN} </p> 
           {/* {pauseRunningCommand ? <MdOutlinePauseCircleOutline /> : <GrResume />} */}
-        </button>
+        {/* </button> */}
         <button className="flex items-center gap-1 px-4 text-sm font-normal" onClick={handleCopy}>
           {copytext ? (
             <span className="flex items-center gap-1">

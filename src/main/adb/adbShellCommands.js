@@ -3,48 +3,47 @@ var adb = require('adbkit')
 var client = adb.createClient({ host: '127.0.0.1', port: 5037 })
 
 let activeStream = null
-
 function adbShellCommands(message, device, callback) {
-  let commandMessage = ' '
-  // console.log(message, "from adb shell command");
-  console.log(device)
+  let commandMessage = ''
+  console.log(message, "from adb shell command");
+  console.log(device, 'this the device dsn from backend')
   commandMessage = message
+   
   // console.log(commandMessage, ' after buffer')
-
-  
-    if (activeStream) {
-      clearStream(activeStream)
-    }
- 
+  clearStream(activeStream)
+  // if (activeStream) {
+  // }
+  const DSN =device
   client.listDevices()
   // .then(function (devices) {
   // return Promise.map(devices, function (device) {
   return (
     client
-      .shell(device, message)
+      .shell(DSN, commandMessage)
       // .then(adb.util.readAll)
       .then(function (stream) {
         //  stream.destroy()
-        activeStream = stream
+        setTimeout(() => {
+          activeStream = stream
+        }, 100)
         let outputBuffer = ''
-     setTimeout(() => {
 
-       stream.on('data', function (data) {
-         const output = data.toString('utf-8').trim()
-        outputBuffer += output
-      
-      if (callback) callback(outputBuffer, 'this is from backend')
-      })
-    },100)
+        stream.on('data', function (data) {
+          const output = data.toString('utf-8').trim()
+          outputBuffer += output
+
+          if (callback) callback(outputBuffer, 'this is from backend')
+        })
 
         stream.on('error', function (err) {
           console.error(`Error on device ${device}:`, err.stack)
+
           if (callback) callback(err)
         })
 
         stream.on('end', function () {
-          console.log(`Stream ended for device ${device}`)
           clearStream(stream)
+          console.log(`Stream ended for device ${device}`)
         })
       })
       .catch(function (err) {

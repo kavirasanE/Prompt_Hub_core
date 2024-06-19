@@ -1,13 +1,14 @@
 import React from 'react'
-import Open from './components/Open'
-import Home from './components/Home'
+// import Open from './components/Open'
+// import Home from './components/Home'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import Takelogs from './pages/Takelogs'
-import ConnectedDevices from './pages/ConnectedDevices'
-import Commands from './pages/Commands'
+// import ConnectedDevices from './pages/ConnectedDevices'
+// import Commands from './pages/Commands'
 import DataProvider from './components/context/DataProvider'
-import Contributors from './pages/Contributors'
-import ShareyourThoughts from './pages/ShareyourThoughts'
+// import Contributors from './pages/Contributors'
+// import ShareyourThoughts from './pages/ShareyourThoughts'
+
 
 function ChildApp() {
   return (

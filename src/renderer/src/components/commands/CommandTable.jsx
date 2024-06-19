@@ -7,18 +7,18 @@ import { DataContext } from '../context/DataProvider'
 const CommandTable = ({ item, index, callback }) => {
   const { setCommandstoOutput, pauseRunningCommand, listDevices,commandsLoading,setCommandsLoading,currentDSN } = useContext(DataContext)
   // console.log(pauseRunningCommand)
-  console.log("handled roperly",currentDSN);
+  // console.log("handled roperly",currentDSN);
   const handleClick = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
     setCommandsLoading(true)
     setTimeout(()=> {
       setCommandsLoading(false)
     },1000)
     setCommandstoOutput(item.command)
     const coms = item.command
-    e.preventDefault()
-    e.stopPropagation()
     let device = currentDSN
-    // console.log(device)
+    console.log(device)
     const shellComand = coms
     // console.log(shellComand)
     window.electron.ipcRenderer.invoke('shellCommand', shellComand, device).then((res) => {
@@ -27,18 +27,15 @@ const CommandTable = ({ item, index, callback }) => {
         console.log('Connected to WebSocket server')
       }
       socket.onmessage = (event) => {
-
         let last = JSON.parse(event.data)
         //  if(pauseRunningCommand == true){
-          setTimeout(() => {
+          // setTimeout(() => {
             callback(last)
-          }, 500)
+          // }, 500)
         //  }
         //  else{
         //   alert("you have paused the log please resume it before clicking the command")
         //  }
-       
-       
       }
      
       

@@ -53,10 +53,10 @@ export function Online() {
               </form>
               <Sidebar.Items>
                 <Sidebar.ItemGroup>
-                  <Link to="/logs" className="">
+                  <Link to="/logs">
                     <Sidebar.Item icon={TbPrompt}>Take Logs</Sidebar.Item>
                   </Link>
-                  <Link to="/Home" className="">
+                  <Link to="/Home">
                     <Sidebar.Item icon={TbBrandSpeedtest}>Test your Commands (BETA)</Sidebar.Item>
                   </Link>
                   {/* <Sidebar.Item href="/demo">Test</Sidebar.Item> */}

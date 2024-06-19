@@ -86,8 +86,7 @@ export default function Home() {
 
       <div className=" border-gray-300 bg-black/90 mx-10 mt-10 h-96 overflow-y-auto p-2 rounded-xl">
         <Button onClick={CopytoClipboard}>Copy to ClipBoard</Button>
-        <pre ref={textRef} className='text-white'></pre>
-       
+        <pre ref={textRef} className='text-white'></pre> 
       </div>
       <Footer/>
     </div>

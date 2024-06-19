@@ -54,9 +54,9 @@ function createChildWindow() {
     width: 700,
     height: 570,
     show: false,
-    autoHideMenuBar: true,
-    // parent:mainWindow,
-    // ...(process.platform === 'linux' ? { icon } : {}),
+    // autoHideMenuBar: true,
+    parent:mainWindow,
+    ...(process.platform === 'linux' ? { icon } : {}),
     icon: join(__dirname,'../../resources/icon.png'),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
@@ -106,7 +106,7 @@ app.whenReady().then(() => {
   ipcMain.on('ping', () => console.log('pong'))
 
   ipcMain.on("openChildWindow" , () => {
-    createChildWindow()
+    createChildWindow();
   })
 
   ipcMain.handle('adb', async (event, a) => {
