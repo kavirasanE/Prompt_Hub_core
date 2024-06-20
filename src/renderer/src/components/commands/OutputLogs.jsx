@@ -11,9 +11,10 @@ const OutputLogs = ({ output }) => {
     useContext(DataContext)
   const textRef = useRef('')
   const [copytext, setCopyText] = useState(true)
-   if(typeof output == "object") {
-        output = " "
-   }
+  
+  if (typeof output == 'object') {
+    output = ' '
+  }
 
   const CopytoClipboard = () => {
     let copyText = textRef.current?.innerText
@@ -38,8 +39,8 @@ const OutputLogs = ({ output }) => {
           
           className="  rounded-sm  "
         > */}
-         <p>Device DSN: {currentDSN} </p> 
-          {/* {pauseRunningCommand ? <MdOutlinePauseCircleOutline /> : <GrResume />} */}
+        <p>Device DSN: {currentDSN} </p>
+        {/* {pauseRunningCommand ? <MdOutlinePauseCircleOutline /> : <GrResume />} */}
         {/* </button> */}
         <button className="flex items-center gap-1 px-4 text-sm font-normal" onClick={handleCopy}>
           {copytext ? (
@@ -53,7 +54,7 @@ const OutputLogs = ({ output }) => {
       </p>
       <pre className="text-yellow-200 truncate p-2">Command : {commandstoOuput}</pre>
       <pre className="p-5 break-all text-wrap" ref={textRef}>
-        {output}{' '}
+        {output}
       </pre>
     </div>
   )

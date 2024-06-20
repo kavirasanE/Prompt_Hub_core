@@ -9,6 +9,7 @@ function adbCommands(message, callback) {
     .then(function (devices) {
       return Promise.map(devices, function (device) {
         // return client.shell(device.id, 'echo $RANDOM')
+        console.log(devices)
         return (
           client
             .shell(device.id, message)
@@ -23,7 +24,7 @@ function adbCommands(message, callback) {
                 result != '/bin/bash: getprop: command not found'
               ) {
                 // console.log(result, 'from adb commands backend')
-                if (callback) callback(device.id, result)
+                if(callback) callback(device.id, result)
               } else {
                 adbCommands(m, callback)
               }

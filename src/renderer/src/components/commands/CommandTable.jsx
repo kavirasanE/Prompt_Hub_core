@@ -29,9 +29,9 @@ const CommandTable = ({ item, index, callback }) => {
       socket.onmessage = (event) => {
         let last = JSON.parse(event.data)
         //  if(pauseRunningCommand == true){
-          // setTimeout(() => {
+          setTimeout(() => {
             callback(last)
-          // }, 500)
+          }, 1000)
         //  }
         //  else{
         //   alert("you have paused the log please resume it before clicking the command")

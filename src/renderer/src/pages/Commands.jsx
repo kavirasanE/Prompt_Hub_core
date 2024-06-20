@@ -144,15 +144,15 @@ const Commands = () => {
           "description": "To check spotify ESDK Vorbis log lines"
         },
         {
-          "command": "adb shell setprop persist.amazon.spotify.hifi 1",
+          "command": "setprop persist.amazon.spotify.hifi 1",
           "description": "To enable HIFI need to install this command on every devices in your cluster then Reboot"
         },
         {
-          "command": "adb shell setprop persist.spotify.version current_flac_mrm",
+          "command": "setprop persist.spotify.version current_flac_mrm",
           "description": ""
         },
         {
-          "command": "adb shell reboot",
+          "command": "reboot",
           "description": ""
         }
       ]
@@ -184,41 +184,27 @@ const Commands = () => {
       "title": "Hypnos Galileo Commands",
       "commands": [
         {
-          "command": "adb shell journalctl -f",
+          "command": "journalctl -f",
           "description": "checking running logs on console"
-        },
+        },      
         {
-          "command": "adb shell journalctl -f >filename.txt",
-          "description": "to save full logs while testing"
-        },
-        {
-          "command": "journalctl -f | grep -i \"Keyword\"",
-          "description": "loglines to grep for specific keyword"
-        },
-        {
-          "command": "adb shell 'cat /etc/os-release | grep BUILD_DESC | sed -n \"s/^.*\\/\\([0-9]*\\).*/\\1/p\"'",
+          "command": "cat /etc/os-release | grep BUILD_DESC | sed -n \"s/^.*\\/\\([0-9]*\\).*/\\1/p\"",
           "description": "To check build details"
         },
         {
-          "command": "adb shell 'cat /etc/os-release | grep VERSION_NUMBER | sed -n \"s/^.*=.\\([0-9]*\\).*/\\1/p\"'",
+          "command": "cat /etc/os-release | grep VERSION_NUMBER | sed -n \"s/^.*=.\\([0-9]*\\).*/\\1/p\"",
           "description": "To check version Number"
         },
         {
-          "command": "adb shell 'cat /etc/os-release'",
+          "command": "cat /etc/os-release",
           "description": "To check full details"
         },
-        {
-          "command": "adb shell journalctl -f>hd.txt",
-          "description": "To save logs for Dev Testing"
-        },
+       
         {
           "command": "adb pull /var/log",
           "description": "To provide full device logs"
         },
-        {
-          "command": "adb pull /var/lib/data/ace/dropbox/",
-          "description": "provide the tombstone logs such as crash log, memory logs"
-        },
+       
         {
           "command": "audio_manager_get_prop MainVolume",
           "description": "To check volume for hypnos/galileo"
@@ -322,8 +308,7 @@ const Commands = () => {
   ]
   
 
-
-
+  
   // const data = [
   //   {
   //     id: 0,

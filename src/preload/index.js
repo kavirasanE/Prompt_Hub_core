@@ -16,9 +16,9 @@ const deviceConnect = {
   message: 'getprop | grep build',
   message1: 'cat /etc/os-release',
   // message: {fos:'getprop | grep build' , vega:'cat /etc/os-release'},
-  connectedDevice: function (callback) {
-    trackDevice(callback)
-  },
+  // connectedDevice: function (callback) {
+  //   trackDevice(callback)
+  // },
   device: function (callback) {
     adbCommands(this.message, callback)
   }

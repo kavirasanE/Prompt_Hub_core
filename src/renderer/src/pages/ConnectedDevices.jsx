@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { Online } from '../components/Sidebar'
 import DeviceAcordian from '../components/ConnectedDevices/DeviceAcordian'
 import animation from '../assets/animation.json'
@@ -9,10 +9,9 @@ import { IoRefreshCircle } from 'react-icons/io5'
 import { MdInfoOutline } from 'react-icons/md'
 import { Tooltip } from 'flowbite-react'
 import rocketLoading from '../assets/rocket.gif'
+
 const ConnectedDevices = () => {
   const { listDevices, setListDevices } = useContext(DataContext)
-  const [devices, setDevices] = useState([])
-  const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
 
   const getBuildDetails = async () => {
@@ -22,9 +21,13 @@ const ConnectedDevices = () => {
           let DSN = datas
           const outputString = output
           let obj = outputString.split('\n')
-          let deviceName = ''
+          let deviceName = ' '
           let buildNumber = ''
           let buildNo = ''
+          //     deviceName =obj[16]
+
+          // console.log(obj)
+          // console.log(obj[30],"build details")
           obj.forEach((d) => {
             if (d.includes('ro.build.lab126.project')) {
               deviceName += d
@@ -53,12 +56,13 @@ const ConnectedDevices = () => {
             version: buildNo
           }
           console.log(buildDetails)
-          setTimeout(() => {
-            setListDevices((prevListDevices) => {
-              const uniqueDevices = prevListDevices.filter((device) => device.DSN !== DSN)
-              return [...uniqueDevices, buildDetails]
-            })
-          }, 1000)
+          // setTimeout(() => {
+          setListDevices((prevListDevices) => {
+            let uniqueDevices = prevListDevices.filter((device) => device.DSN !== DSN)
+
+            return [...uniqueDevices, buildDetails]
+          })
+          // }, 1000)
         } catch (err) {
           console.log(err)
         }
@@ -137,7 +141,7 @@ const ConnectedDevices = () => {
   )
 }
 
-export default ConnectedDevices
+export default React.memo(ConnectedDevices)
 
 // const trackDevice =  () => {
 //   window.deviceConnect.connectedDevice(async (data, output) => {

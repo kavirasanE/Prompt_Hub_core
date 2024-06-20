@@ -56,6 +56,7 @@ export default function Home() {
         </Link>
       </div>
        {/* <ErrorBoundaries/> */}
+      
        <div>
         <Button onClick={handleOpenChildWindow}>Open New Window</Button>
        </div>
