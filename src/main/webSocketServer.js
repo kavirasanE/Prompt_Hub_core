@@ -5,14 +5,15 @@ import adbShellCommands from './adb/adbShellCommands'
 
 function webSocketServer(serializedCommand, device) {
   let command = [serializedCommand];
- 
+    let dsn =device
   wss.on('connection', (ws) => {
-    // console.log(command,"command from websocket array")
+    // console.log(serializedCommand,"command from websocket array")
     let updatedCommand = command.splice(0,1);
     let last = updatedCommand[0]
-    // console.log(updatedCommand, 'from updated Command from websocket 8th line')
+    // console.log(dsn,"from websocket 13")
+    // console.log(last, 'from updated Command from websocket 8th line')
     // console.log('Client connected')
-    adbShellCommands(last, device, (result) => {
+    adbShellCommands( dsn,last, (result) => {
       ws.send(JSON.stringify(result))
     })
     ws.on('close', () => {

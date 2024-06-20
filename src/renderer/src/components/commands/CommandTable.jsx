@@ -31,14 +31,12 @@ const CommandTable = ({ item, index, callback }) => {
         //  if(pauseRunningCommand == true){
           setTimeout(() => {
             callback(last)
-          }, 1000)
+          }, 500)
         //  }
         //  else{
         //   alert("you have paused the log please resume it before clicking the command")
         //  }
       }
-     
-      
       socket.onclose = () => {
         console.log('Disconnected from WebSocket server')
       }

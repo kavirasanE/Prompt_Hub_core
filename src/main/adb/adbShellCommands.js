@@ -3,47 +3,43 @@ var adb = require('adbkit')
 var client = adb.createClient({ host: '127.0.0.1', port: 5037 })
 
 let activeStream = null
-const  adbShellCommands = (message, device, callback)  => {
-  let commandMessage = ''
-  console.log(message, 'from adb shell command')
-  console.log(device, 'this the device dsn from backend')
-  commandMessage = message
+let commandMessage = " "
 
+const adbShellCommands = ( device,message =" ", callback) => {
+  // console.log(message, 'from adb shell command')
+  // console.log(device, 'this the device dsn from backend')
+ 
   // console.log(commandMessage, ' after buffer')
-
-  clearStream(activeStream)
-
-  // if (activeStream) {
-  // }
   let DSN = device
+  commandMessage = message
   client.listDevices()
   // .then(function (DSN) {
   // return Promise.map(devices, function (device) {
   return (
     client
-      .shell(DSN, commandMessage)
+      .shell(device, message)
       // .then(adb.util.readAll)
       .then(function (stream) {
-        //  stream.destroy()
-
+        activeStream = null
+        if (activeStream) {
+          clearStream(activeStream)
+        }
+        // console.log(device, 'Current Device NAme from adbshell')
+        // console.log(message,"current message from adbsheklcommands 27")
         activeStream = stream
-
         let outputBuffer = ''
-       
         stream.on('data', function (data) {
-          DSN = ' '
           const output = data.toString('utf-8').trim()
           outputBuffer += output
           if (callback) callback(outputBuffer, 'this is from backend')
         })
-        
         stream.on('error', function (err) {
           console.error(`Error on device ${device}:`, err.stack)
           if (callback) callback(err)
         })
-        
         stream.on('end', function () {
           DSN = null
+          commandMessage = message
           clearStream(stream)
           console.log(`Stream ended for device ${device}`)
         })
@@ -62,18 +58,16 @@ const  adbShellCommands = (message, device, callback)  => {
         if (callback) callback(err)
       })
   )
-// })
+  // })
 }
 
 function clearStream(stream) {
   if (stream) {
-    stream.pause()
-    stream.removeAllListeners()
-    stream.end()
+    // stream.pause()
+    // stream.removeAllListeners()
+    // stream.end()
     stream.destroy()
   }
 }
 
 export default adbShellCommands
-
-

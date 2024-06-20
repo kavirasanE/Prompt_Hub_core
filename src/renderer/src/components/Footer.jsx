@@ -8,8 +8,7 @@ const Footer = () => {
       <p className=" border border-t-0 mx-10 border-black"></p>
       <p className="flex justify-center items-center text-sm p-2">
         <a href="https://phonetool.amazon.com/users/kavirasa"  target='_blank'  className='cursor-pointer underline'>
-          Designed and Developed by KAVIRASAN E (Device Associate) {currentYear}. &reg;All
-        Right Reserved
+          Designed and Developed by KAVIRASAN E (Device Associate) {currentYear}. &reg;V 01.00.0
         </a>
 
       </p>

@@ -34,125 +34,125 @@ const Contributors = () => {
     }
   ]
 
-  const Seniorwhateam = [
-    {
-      name: 'Satheesh G',
-      photo: sathish, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'sathguna',
-      years: 5
-    },
-    {
-      name: 'SOWBARANEKA N.V',
-      photo: sowbar, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'sowbar',
-      years: 5
-    },
-    {
-      name: 'Suriyakala V',
-      photo: suriyakala, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'vsuriya',
-      years: 5
-    },
-    {
-      name: 'Benisha J',
-      photo: benisha, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'benishj',
-      years: 4
-    },
-    {
-      name: 'Saravanakumar N',
-      photo: saravana, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'nasrav',
-      years: 4
-    },
-    {
-      name: 'Priyadharsini Paramasivam',
-      photo: priya, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'papriyad',
-      years: 4
-    },
-    {
-      name: 'R, DAYALU',
-      photo: dayalu, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'zrdayal',
-      years: 4
-    },
-    {
-      name: 'Monica Gauthama',
-      photo: monica, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'mggautha',
-      years: 4
-    }
-  ]
+  // const Seniorwhateam = [
+  //   {
+  //     name: 'Satheesh G',
+  //     photo: sathish, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'sathguna',
+  //     years: 5
+  //   },
+  //   {
+  //     name: 'SOWBARANEKA N.V',
+  //     photo: sowbar, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'sowbar',
+  //     years: 5
+  //   },
+  //   {
+  //     name: 'Suriyakala V',
+  //     photo: suriyakala, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'vsuriya',
+  //     years: 5
+  //   },
+  //   {
+  //     name: 'Benisha J',
+  //     photo: benisha, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'benishj',
+  //     years: 4
+  //   },
+  //   {
+  //     name: 'Saravanakumar N',
+  //     photo: saravana, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'nasrav',
+  //     years: 4
+  //   },
+  //   {
+  //     name: 'Priyadharsini Paramasivam',
+  //     photo: priya, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'papriyad',
+  //     years: 4
+  //   },
+  //   {
+  //     name: 'R, DAYALU',
+  //     photo: dayalu, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'zrdayal',
+  //     years: 4
+  //   },
+  //   {
+  //     name: 'Monica Gauthama',
+  //     photo: monica, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'mggautha',
+  //     years: 4
+  //   }
+  // ]
 
-  const deviceassociate = [
-    {
-      name: 'Goodwin A',
-      photo: goodwin, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'goodwira',
-      years: 2
-    },
-    {
-      name: 'Subaash K',
-      photo: subaash, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'ksubaasq',
-      years: 3
-    },
-    {
-      name: 'Sriram V',
-      photo: sriram, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'jvsrira',
-      years: 3
-    },
-    {
-      name: 'NIRANJAN IMMANUVEL',
-      photo: niranjan, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'niranimm',
-      years: 2
-    }
-  ]
+  // const deviceassociate = [
+  //   {
+  //     name: 'Goodwin A',
+  //     photo: goodwin, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'goodwira',
+  //     years: 2
+  //   },
+  //   {
+  //     name: 'Subaash K',
+  //     photo: subaash, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'ksubaasq',
+  //     years: 3
+  //   },
+  //   {
+  //     name: 'Sriram V',
+  //     photo: sriram, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'jvsrira',
+  //     years: 3
+  //   },
+  //   {
+  //     name: 'NIRANJAN IMMANUVEL',
+  //     photo: niranjan, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'niranimm',
+  //     years: 2
+  //   }
+  // ]
 
-  const otherAssociates = [
-    {
-      name: 'praveen j',
-      photo: praveen, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'praveejh',
-      years: 2
-    },
-    {
-      name: 'Johnson Paul',
-      photo: john, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'ashokajo',
-      years: 2
-    },
-    {
-      name: 'G.JOSEPH',
-      photo: joseph, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'gzjosep',
-      years: 5
-    },
-    {
-      name: 'Asha J',
-      photo: asha, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'ashajaya',
-      years: 5
-    }
-  ]
+  // const otherAssociates = [
+  //   {
+  //     name: 'praveen j',
+  //     photo: praveen, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'praveejh',
+  //     years: 2
+  //   },
+  //   {
+  //     name: 'Johnson Paul',
+  //     photo: john, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'ashokajo',
+  //     years: 2
+  //   },
+  //   {
+  //     name: 'G.JOSEPH',
+  //     photo: joseph, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'gzjosep',
+  //     years: 5
+  //   },
+  //   {
+  //     name: 'Asha J',
+  //     photo: asha, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'ashajaya',
+  //     years: 5
+  //   }
+  // ]
   
-  const Managers = [
-    {
-      name: 'Aaminah Khursheed N',
-      photo: aaminah, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'aaminahn',
-      years: 5
-    },
-    {
-      name: 'Vignesh Arjunan',
-      photo: vignesh, // Assuming this is a variable or a placeholder for the actual photo URL
-      username: 'arjunavi',
-      years: 2
-    }
-  ]
+  // const Managers = [
+  //   {
+  //     name: 'Aaminah Khursheed N',
+  //     photo: aaminah, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'aaminahn',
+  //     years: 5
+  //   },
+  //   {
+  //     name: 'Vignesh Arjunan',
+  //     photo: vignesh, // Assuming this is a variable or a placeholder for the actual photo URL
+  //     username: 'arjunavi',
+  //     years: 2
+  //   }
+  // ]
 
   return (
     <div>

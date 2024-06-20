@@ -163,6 +163,7 @@ app.whenReady().then(() => {
 
   ipcMain.handle('shellCommand', async (event,serializedCommand,device) => {
     // console.log(serializedCommand,"from main index 126th")
+    // console.log(device,"from Index Backend")
     webSocketServer(serializedCommand,device);
   })
    

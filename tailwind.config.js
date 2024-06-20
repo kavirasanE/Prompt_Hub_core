@@ -7,10 +7,6 @@ export default {
     flowbite.content(),
   ],
   theme: {
-    colors:{
-      'idms':'#ec7211',
-      'midnight': '#121063',
-    },
     extend: {},
   },
   plugins: [

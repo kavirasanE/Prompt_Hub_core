@@ -33,19 +33,17 @@ export default function Home() {
 
   const CopytoClipboard = () => {
     let copyText = textRef.current?.innerText
-    console.log(copyText);
+    console.log(copyText)
     let isCopy = copy(copyText)
     if (isCopy) {
       toast.success('Copied to Clipboard')
     }
     console.log(copyText)
   }
-  
-  const handleOpenChildWindow = async () => {
-   await  window.electron.ipcRenderer
-    .send("openChildWindow")
-  }
 
+  const handleOpenChildWindow = async () => {
+    await window.electron.ipcRenderer.send('openChildWindow')
+  }
 
   return (
     <div className="pt- bg-white">
@@ -55,15 +53,18 @@ export default function Home() {
           Back to Home
         </Link>
       </div>
-       {/* <ErrorBoundaries/> */}
-      
-       <div>
+      {/* <ErrorBoundaries/> */}
+     
+      <div>
         <Button onClick={handleOpenChildWindow}>Open New Window</Button>
-       </div>
-      <div className='bg-yellow-100'>
-      <Marquee>
-        <p className='my-5 p-1 rounded-lg font-bold text-lg  '>"This page is experimental, and we are working on it. It will be in production soon! Have a good day!".</p>
-      </Marquee>
+      </div>
+      <div className="bg-yellow-100">
+        <Marquee>
+          <p className="my-5 p-1 rounded-lg font-bold text-lg  ">
+            "This page is experimental, and we are working on it. It will be in production soon!
+            Have a good day!".
+          </p>
+        </Marquee>
       </div>
       <div className="px-24 pt-5">
         <form className="flex max-w-md flex-col gap-4">
@@ -84,12 +85,18 @@ export default function Home() {
           </Button>
         </form>
       </div>
-
+      {/* <a
+        href="https://prod.idms.gdq.amazon.dev/#/device-checkin"
+        target="_blank"
+        className="bg-orange-500 text-black/80 font-bold  rounded-full p-2  px-4 m-2"
+      >
+        Check-in
+      </a> */}
       <div className=" border-gray-300 bg-black/90 mx-10 mt-10 h-96 overflow-y-auto p-2 rounded-xl">
         <Button onClick={CopytoClipboard}>Copy to ClipBoard</Button>
-        <pre ref={textRef} className='text-white'></pre> 
+        <pre ref={textRef} className="text-white"></pre>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

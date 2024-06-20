@@ -6,13 +6,13 @@ import { MdContentCopy } from 'react-icons/md'
 import copy from 'copy-to-clipboard'
 import toast from 'react-hot-toast'
 const DeviceAcordian = ({ device, index }) => {
-  const {setCurrentDSN} =useContext(DataContext);
-  let dsnRef = useRef(0);
+  const { setCurrentDSN } = useContext(DataContext)
+  let dsnRef = useRef(0)
 
   const CopyDSN = () => {
     let copydsn = dsnRef.current?.innerText
-    let Copy =copy(copydsn)
-    if(Copy){
+    let Copy = copy(copydsn)
+    if (Copy) {
       toast.success(' DSN Copied')
     }
   }
@@ -22,7 +22,7 @@ const DeviceAcordian = ({ device, index }) => {
     <div className="p-5">
       <Accordion>
         <Accordion.Panel>
-          <Accordion.Title className="bg-blue-800 text-white hover:bg-blue-800 ">
+          <Accordion.Title className="bg-gray-800 text-white hover:bg-gray-700 ">
             <div className=" w-15/16 flex flex-row items-center justify-between ">
               <p>{device.deviceName}</p>
             </div>
@@ -31,20 +31,27 @@ const DeviceAcordian = ({ device, index }) => {
             <div className="font-bold  px-5">
               <div className="flex flex-row justify-between items-center">
                 <p>{device.build}</p>
-                <p>
-                  DSN: <span ref={dsnRef}>{device.DSN} </span> <MdContentCopy onClick={CopyDSN}/>
+                <p className='flex items-center justify-between gap-3'>
+                  DSN:<span ref={dsnRef}>{device.DSN}  </span> <MdContentCopy onClick={CopyDSN} className='cursor-pointer' />
                 </p>
               </div>
               <div className="flex flex-row justify-between items-center">
                 <div className="flex flex-row justify-start items-center gap-10 p-5">
                   {/* <Link to="/logs"> */}
-                  <a href='https://prod.idms.gdq.amazon.dev/#/device-checkin' target='_blank'>
-                    <Button className=' bg-idms text-black/95 font-bold  rounded-full'>Check-in</Button>
+                  <a
+                  style={{backgroundColor: "#ec7211"}}
+                    href="https://prod.idms.gdq.amazon.dev/#/device-request"
+                    target="_blank"
+                    className=" text-black font-bold  rounded-lg p-2 px-4 "
+                  >
+                   Check-in
                   </a>
                   {/* </Link> */}
 
                   <Link to="/commands">
-                    <Button color="dark" onClick={() => setCurrentDSN(device.DSN)}>Check Commands</Button>
+                    <Button color="dark" onClick={() => setCurrentDSN(device.DSN)}>
+                      Check Commands
+                    </Button>
                   </Link>
                 </div>
                 <p>{device.version}</p>
