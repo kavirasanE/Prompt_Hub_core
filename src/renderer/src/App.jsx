@@ -9,6 +9,10 @@ import DataProvider from './components/context/DataProvider'
 import Contributors from './pages/Contributors'
 import ShareyourThoughts from './pages/ShareyourThoughts'
 import ErrorBoundaries from './components/ErrorBoundary'
+import IdmsTracker from './pages/IdmsTracker'
+import Missinglabel from './pages/Missinglabel'
+import BugReportai from './pages/BugReportai'
+import UrlHub from './pages/UrlHub'
 
 function App() {
   return (
@@ -23,6 +27,10 @@ function App() {
             <Route path="/contibutors" element={<Contributors />} />
             <Route path="/commands" element={<Commands />} />
             <Route path="/thoughts" element={<ShareyourThoughts />} />
+            <Route path="/idmstracker" element={<IdmsTracker />} />
+            <Route path="/missinglabel" element={<Missinglabel />} />
+            <Route path="/bugreportai" element={<BugReportai />} />
+            <Route path="/urlhub" element={<UrlHub />} />
           <Route path='/error' element={<ErrorBoundaries/>}/>
           </Routes>
         </DataProvider>

@@ -21,11 +21,11 @@ function createWindow() {
     height: 670,
     show: false,
     autoHideMenuBar: true,
+    
     // ...(process.platform === 'linux' ? { icon } : {}),
     icon: join(__dirname,'../../resources/icon.png'),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-
       sandbox: false
     }
   })
@@ -48,18 +48,18 @@ function createWindow() {
   }
 }
 
+ let childWindow
 function createChildWindow() {
-  // Create the browser window.
-  let childWindow = new BrowserWindow({
+  childWindow = new BrowserWindow({
     width: 700,
-    height: 570,
+    height: 500,
     show: false,
-    // autoHideMenuBar: true,
+    autoHideMenuBar: true,
     parent:mainWindow,
-    ...(process.platform === 'linux' ? { icon } : {}),
+    // ...(process.platform === 'linux' ? { icon } : {}),
     icon: join(__dirname,'../../resources/icon.png'),
     webPreferences: {
-      preload: join(__dirname, '../preload/index.js'),
+      preload: join(__dirname,'../preload/index.js'),
       sandbox: false
     }
   })
@@ -76,12 +76,15 @@ function createChildWindow() {
   // HMR for renderer base on electron-vite cli.
   // Load the remote URL for development or the local html file for production.
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
-    // childWindow.loadFile(join(__dirname, '../renderer/childIndex.html'))
     childWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
+    // childWindow.loadFile(join(__dirname, '../renderer/child.html'))
+    // childWindow.loadURL('http://localhost:5173/logs')
   } else {
-    childWindow.loadFile(join(__dirname, '../renderer/childIndex.html'))
+    childWindow.loadFile(join(__dirname, '../renderer/child.html'))
   }
+
 }
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -105,9 +108,9 @@ app.whenReady().then(() => {
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
 
-  ipcMain.on("openChildWindow" , () => {
-    createChildWindow();
-  })
+ ipcMain.on('openChildWindow' , () => {
+  createChildWindow();
+ })
 
   ipcMain.handle('adb', async (event, a) => {
     a = 'im here in react '

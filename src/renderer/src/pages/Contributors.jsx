@@ -157,7 +157,7 @@ const Contributors = () => {
   return (
     <div>
       <Online />
-      <p className="font-bold text-3xl p-2 text-center ">Design and Developed By</p>
+      <p className="font-bold text-3xl p-2 text-center ">Crafted and Developed By</p>
       <p className="border mx-10 border-b-0 border-black"></p>
       <div className="flex justify-center">
         <a

@@ -107,10 +107,10 @@ const Takelogs = () => {
         </Button>
         {}
         <Button.Group>
-          <Button color="light" pill onClick={() => setSocketConnection(false)}>
+          <Button className='bg-gray-500' pill onClick={() => setSocketConnection(false)}>
             Pause
           </Button>
-          <Button color="failure" pill onClick={() => setSocketConnection(true)}>
+          <Button className='bg-red-400' pill onClick={() => setSocketConnection(true)}>
             Resume
           </Button>
         </Button.Group>

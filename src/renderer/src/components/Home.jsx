@@ -45,6 +45,7 @@ export default function Home() {
     await window.electron.ipcRenderer.send('openChildWindow')
   }
 
+
   return (
     <div className="pt- bg-white">
       <div className="flex justify-between items-center">
@@ -54,10 +55,7 @@ export default function Home() {
         </Link>
       </div>
       {/* <ErrorBoundaries/> */}
-     
-      <div>
-        <Button onClick={handleOpenChildWindow}>Open New Window</Button>
-      </div>
+      
       <div className="bg-yellow-100">
         <Marquee>
           <p className="my-5 p-1 rounded-lg font-bold text-lg  ">
@@ -66,6 +64,7 @@ export default function Home() {
           </p>
         </Marquee>
       </div>
+        <Button onClick={handleOpenChildWindow} className='m-5 bg-amber-500 hover:bg-amber-200'>Open New Window</Button>
       <div className="px-24 pt-5">
         <form className="flex max-w-md flex-col gap-4">
           <div>

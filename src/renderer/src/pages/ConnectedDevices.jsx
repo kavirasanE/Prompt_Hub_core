@@ -70,9 +70,9 @@ const ConnectedDevices = () => {
     })
   }
 
-  useEffect(() => {
-    getBuildDetails()
-  }, [])
+  // useEffect(() => {
+  //   getBuildDetails()
+  // }, [])
 
   const defaultOptions = {
     loop: true,

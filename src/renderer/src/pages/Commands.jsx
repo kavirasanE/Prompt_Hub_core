@@ -24,7 +24,7 @@ const Commands = () => {
           "description": "Dumpsys command for Puffin devices to know ASD, ASD score, TSS."
         },
         {
-          "command": "adb shell setprop persist.amazon.whad.tsm_score 255",
+          "command": "setprop persist.amazon.whad.tsm_score 255",
           "description": "Forcing specific device to be TSS (Time Sync Server)."
         },
         {
@@ -149,11 +149,11 @@ const Commands = () => {
         },
         {
           "command": "setprop persist.spotify.version current_flac_mrm",
-          "description": ""
+          "description": "to enable flac in spotify"
         },
         {
           "command": "reboot",
-          "description": ""
+          "description": "to reboot the device"
         }
       ]
     },
@@ -201,7 +201,7 @@ const Commands = () => {
         },
        
         {
-          "command": "adb pull /var/log",
+          "command": "pull /var/log",
           "description": "To provide full device logs"
         },
        
@@ -235,10 +235,10 @@ const Commands = () => {
           "command": "ps | grep -i puffin",
           "description": "This command is used to get the process id (PID) of puffinmrmd resource in the LPM device."
         },
-        {
-          "command": "kill -9 <Process ID to be entered here>",
-          "description": "This command restart the puffinmrmd resource by killing the existing puffinmrmd"
-        },
+        // {
+        //   "command": "kill -9 <Process ID to be entered here>",
+        //   "description": "This command restart the puffinmrmd resource by killing the existing puffinmrmd"
+        // },
         {
           "command": "logcat -b all | grep -iE \"perflock mode switch type=cpu|network mode=\"",
           "description": "To Check whether the device enters into full/partial LPM mode by using this command."
@@ -280,14 +280,6 @@ const Commands = () => {
           "description": "To check whether Music is playing or Not."
         },
         {
-          "command": "adb -s DSN logcat -v threadtime > \"Keyword as device name .txt\" &",
-          "description": "Command used to save the logs."
-        },
-        {
-          "command": "adb -s G2A1A603034300U1 logcat -v threadtime > \"laser_primeplaylist11_musicPf.txt\" &",
-          "description": ""
-        },
-        {
           "command": "am broadcast -a amazon.speech.SEND_TO_SIM --es ttsText \"\\\"Alexa, Play KUOW FM from tunein on party time group\\\"\"",
           "description": "Inject command to Initiate longevity via command"
         },
@@ -306,6 +298,7 @@ const Commands = () => {
       ]
     }
   ]
+  
   
 
   
