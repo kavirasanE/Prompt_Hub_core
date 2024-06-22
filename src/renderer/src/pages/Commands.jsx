@@ -327,6 +327,7 @@ const Commands = () => {
     setOutput(output)
     // console.log(output)
   }
+  
   useEffect(() => {
     if (logRef.current) {
       logRef.current.scrollTop = logRef.current.scrollHeight
