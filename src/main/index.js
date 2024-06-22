@@ -80,7 +80,7 @@ function createChildWindow() {
     // childWindow.loadFile(join(__dirname, '../renderer/child.html'))
     // childWindow.loadURL('http://localhost:5173/logs')
   } else {
-    childWindow.loadFile(join(__dirname, '../renderer/child.html'))
+    childWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
 
 }

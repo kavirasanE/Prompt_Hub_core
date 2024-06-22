@@ -32,7 +32,8 @@ export function Online() {
           onClick={() => setIsOpen(true)}
         />
         <p className="rounded-md font-bold text-xl  p-2 text-white bg-black">
-          Prompt <span className="bg-white p-0.5 rounded-sm px-2 text-black ">hub</span>
+          Prompt <span  className="bg-gray-300 p-0.5 rounded-sm px-2 text-black ">hub</span>
+          {/* style={{backgroundColor: "#ec7211"}}     */}
         </p>
         <a
           href="https://quip-amazon.com/3CxOAyamZbJl/Untitled#temp:C:eET1d0643d10858404087b11218a"

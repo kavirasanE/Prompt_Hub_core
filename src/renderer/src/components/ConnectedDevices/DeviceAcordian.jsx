@@ -22,7 +22,7 @@ const DeviceAcordian = ({ device, index }) => {
     <div className="p-5">
       <Accordion>
         <Accordion.Panel>
-          <Accordion.Title className="bg-gray-800 text-white hover:bg-gray-700 ">
+          <Accordion.Title className="bg-gray-300 text-black hover:bg-gray-500 ">
             <div className=" w-15/16 flex flex-row items-center justify-between ">
               <p>{device.deviceName}</p>
             </div>

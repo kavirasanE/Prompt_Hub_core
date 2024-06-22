@@ -13,7 +13,7 @@ const socket = {
   }
 }
 const deviceConnect = {
-  message: 'getprop | grep build',
+  message: 'getprop',
   message1: 'cat /etc/os-release',
   // message: {fos:'getprop | grep build' , vega:'cat /etc/os-release'},
   // connectedDevice: function (callback) {

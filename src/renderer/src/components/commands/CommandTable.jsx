@@ -14,7 +14,7 @@ const CommandTable = ({ item, index, callback }) => {
     setCommandsLoading(true)
     setTimeout(()=> {
       setCommandsLoading(false)
-    },1000)
+    },1500)
     setCommandstoOutput(item.command)
     const coms = item.command
     let device = currentDSN
@@ -31,7 +31,7 @@ const CommandTable = ({ item, index, callback }) => {
         //  if(pauseRunningCommand == true){
           setTimeout(() => {
             callback(last)
-          }, 500)
+          },1000)
         //  }
         //  else{
         //   alert("you have paused the log please resume it before clicking the command")

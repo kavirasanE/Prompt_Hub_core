@@ -24,9 +24,8 @@ const ConnectedDevices = () => {
           let deviceName = ' '
           let buildNumber = ''
           let buildNo = ''
-          //     deviceName =obj[16]
-
-          // console.log(obj)
+          //deviceName =obj[16]
+          console.log(datas,obj)
           // console.log(obj[30],"build details")
           obj.forEach((d) => {
             if (d.includes('ro.build.lab126.project')) {
