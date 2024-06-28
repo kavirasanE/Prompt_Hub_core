@@ -19,6 +19,11 @@
 //Mohana Priya --- session storage in activity Bar Page to maitntian the logs in the currect commands and search Bar.....
 // Benisha --- Spotify version and userdebug type in the accordian in the on the connected devices.
 
+27/06/2024
+//Varshini && Jeyasowmiya - when Vega device Added in the cluster Fos7 deviced deTAILS  IS NOT SHOWING ONLY dsn IS SHOWING ?
+// sowbar --gave correction in Documentation WIKI
+
+
 
 
 
