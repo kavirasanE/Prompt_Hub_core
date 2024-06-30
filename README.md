@@ -27,4 +27,12 @@
 
 
 
+Yet to Solve the Issues:
+Priya: Add Spotify gapless commands.
+Benisha: Add Spotify version
+Mohana Priya: Implement session storage in activity bar page to maintain logs for current commands and search bar.
+Priya: Correct commands in command prompt with DRM and Katana log line.
+Subaash: Customize specific commands (e.g., journalctl -f | grep -i "keyword").
+suriya : localstorage in folderpath
+
 
