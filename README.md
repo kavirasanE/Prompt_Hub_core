@@ -28,7 +28,6 @@
 
 
 Yet to Solve the Issues:
-suriya : localstorage in folderpath.
 Priya: Add Spotify gapless commands.
 Benisha: Add Spotify version
 Mohana Priya: Implement session storage in activity bar page to maintain logs for current commands and search bar.
