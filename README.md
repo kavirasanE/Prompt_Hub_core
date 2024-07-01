@@ -25,8 +25,6 @@
 // priya -- Spotify gapless commands to add
 
 
-
-
 Yet to Solve the Issues:
 Priya: Add Spotify gapless commands.
 Benisha: Add Spotify version
@@ -34,13 +32,11 @@ Mohana Priya: Implement session storage in activity bar page to maintain logs fo
 
 
 
-
 Retrospective insights for Beta Version 1.0
 
 Completed Tasks:
-
 Varshini: Back button on commands page.
-Priya:correct commands with DRM/Katana log lines, add Spotify gapless commands.
+Priya:correct commands with DRM/Katana log lines.
 Dayalu: Automatic log management.
 Vsuriya: Local storage for logs with edit option.
 Subaash: Customizable commands, e.g., journalctl -f | grep -i "keyword".
@@ -51,12 +47,12 @@ Benisha: Add Spotify version/userdebug type in accordion.
 Varshini & Jeyasowmiya: Fix Vega device details in Fos7 cluster.
 Issues Yet to be Resolved:
 
-In Development Phase, soon in production
+In Development Phase, Soon in production
 Priya: Push APK,Add Spotify gapless commands.
 Benisha: Add Spotify version.
 Mohana Priya: Implement session storage for logs.
 
-Appreciation
+Appreciation :
 I want to extend my heartfelt appreciation to the entire pilot team. 🙏 Your dedication and hard work have been invaluable. Your feedback has played a crucial role in standardizing and enhancing our application. 🚀 Because of your efforts, we have achieved a higher standard of quality and functionality. Thank you for your outstanding contributions! 🌟
 
 
