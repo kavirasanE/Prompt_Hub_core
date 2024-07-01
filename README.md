@@ -35,7 +35,7 @@ Mohana Priya: Implement session storage in activity bar page to maintain logs fo
 
 
 
-Retrospective Tasks for Beta Version 1.0
+Retrospective insights for Beta Version 1.0
 
 Completed Tasks:
 
