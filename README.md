@@ -51,6 +51,7 @@ Benisha: Add Spotify version/userdebug type in accordion.
 Varshini & Jeyasowmiya: Fix Vega device details in Fos7 cluster.
 Issues Yet to be Resolved:
 
+In Development Phase, soon in production
 Priya: Push APK,Add Spotify gapless commands.
 Benisha: Add Spotify version.
 Mohana Priya: Implement session storage for logs.
