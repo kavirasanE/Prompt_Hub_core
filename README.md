@@ -31,10 +31,11 @@ Benisha: Add Spotify version
 Mohana Priya: Implement session storage in activity bar page to maintain logs for current commands and search bar.
 
 
-
 Retrospective insights for Beta Version 1.0
 
+
 Completed Tasks:
+
 Varshini: Back button on commands page.
 Priya:correct commands with DRM/Katana log lines.
 Dayalu: Automatic log management.
@@ -48,11 +49,13 @@ Varshini & Jeyasowmiya: Fix Vega device details in Fos7 cluster.
 Issues Yet to be Resolved:
 
 In Development Phase, Soon in production
+
 Priya: Push APK,Add Spotify gapless commands.
 Benisha: Add Spotify version.
 Mohana Priya: Implement session storage for logs.
 
 Appreciation :
+
 I want to extend my heartfelt appreciation to the entire pilot team. 🙏 Your dedication and hard work have been invaluable. Your feedback has played a crucial role in standardizing and enhancing our application. 🚀 Because of your efforts, we have achieved a higher standard of quality and functionality. Thank you for your outstanding contributions! 🌟
 
 
