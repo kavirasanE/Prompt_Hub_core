@@ -90,3 +90,7 @@ Warm regards,
 
 Feel free to let me know if there's anything specific you'd like to add or adjust!
 
+
+//02/07/2024 --   MK Vigensh - remove backl button when it comes to the connected device pagew
+
+
