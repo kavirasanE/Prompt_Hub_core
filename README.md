@@ -94,25 +94,41 @@ Feel free to let me know if there's anything specific you'd like to add or adjus
 //02/07/2024 --   MK Vigensh - remove backl button when it comes to the connected device pagew
 
 
-11/7
-   Priya --- 
-// set working directory   --- local storage cache clear all the 
-// stop taking logs        ---  remove local storage and useeffect hook in react js.
-// if remove device the logs should stop running 
-// gapless command ---- spotify
-// knight apk aria amplesss protected commands in the commands in the commands.
+Here's a more concise version:
+
+---
+
+### 11/7 Team Contributions
+
+
+**Asha:**
+- Recommended running log cleanup functions to prevent errors. 🛠️
+- 
+**Divya:**
+- Provided new commands from Tuple and customizable commands to enhance the commands page. 📋
+
+- **Saravana:**
+- Suggested setting a notification alarm for timesheets to avoid deviations. ⏰
+
+
+**Priya:**
+- Gave gapless commands for Knight APK and Aria ampless commands for Spotify to be added to the commands page.
+- Suggested ideas for improving user experience in  TAKE LOGs MODULE  in a convenient way. 💡
+
+
+**Mohana Priya:**
+- Gave new Vega commands, enhancing our command structure. 🚀
+
+**Palani & Gayathripriya:**
+- Shared WHA-CS specific commands for the commands pages. 📜
+  
+- Thank you all for your incredible contributions to enhancing our application! Keep up the fantastic work, and let's continue pushing the boundaries of what we can achieve together! 🌟💪
 
 
 
-Divya: Given new and customizable commands that help improve the user experience on the commands page. 🌟 Your contributions have made the interface much more user-friendly. Great job!
-
-Asha: Highlighted that keeping logs for an extended period can lead to errors, suggesting opening the laptop only until the logs are taken to avoid issues. 💡 Thanks for the insightful advice and your continuous support with new ideas!
 
 
-Priya: 
 
-Mohana Priya: Provided new commands to add Vega commands in the commands section. 📈 Your input has been invaluable in enhancing our command structure. Excellent work!
 
-Feel free to let me know if there are any further adjustments needed!
 
 
