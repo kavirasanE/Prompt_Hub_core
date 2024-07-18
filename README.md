@@ -125,7 +125,19 @@ Here's a more concise version:
 - Thank you all for your incredible contributions to enhancing our application! Keep up the fantastic work, and let's continue pushing the boundaries of what we can achieve together! 🌟💪
 
 
+// 18/07
 
+Deepak: Thank you for your idea about tracking commands in the Wiki. This will greatly simplify tracking and implementation in the commands page module. 📋
+
+@Manasa: Your suggestion in adding the CID in the accordion for an enhanced user experience is useful for all associates. 🌟
+
+@Praveen: collecting commands based on component owners is brilliant. It will significantly reduce the time and effort required for segregating and structuring command data.💡
+
+@sathish :  Your suggested UI changes in the Voice Utterance Module have been implemented and will be updated in the upcoming build. These changes will enhance the usability of the application. Thank you for your valuable input.
+
+@Johnson: Your attention to detail in correcting grammatical mistakes in the application is much appreciated. It enhances our professionalism and clarity. ✍️
+
+Thank you all for your Contribution  and collaboration. Let's continue to strive for excellence and grow together!  
 
 
 
